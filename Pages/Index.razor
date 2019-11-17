@@ -1,5 +1,24 @@
-﻿@page "/"
+﻿@using ElectronNET.API
+@page "/"
+<div class="container">
+    <div class="row">
+        <h1>Hello, world!</h1>
+    </div>
 
-<h1>Hello, world!</h1>
+    <div class="row">
+        <p>Welcome to your new app.</p>
+    </div>
+    <div class="row">
+        <p>This is Blazor, You can exit the app without the Javascript Hcp Electron hooks<br/>only use C# and Electron.NET API.</p>
+    </div>
+    <div class="row">
+        <button class="btn btn-dark" @onclick="Exit">Exit App</button>
+    </div>
+</div>
 
-Welcome to your new app.
+@code {
+    void Exit()
+    {
+        Electron.App.Quit();
+    }
+}
